@@ -56,7 +56,7 @@ public class UnitTestFraction
         Fraction f1 = new(2, 1);
 
         // act & assert
-        Assert.Equal(false, f1.Equals(null));
+        Assert.False(f1.Equals(null));
     }
 
 
