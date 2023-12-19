@@ -46,7 +46,7 @@ public class UnitTestFraction
 
         // act & assert
         Assert.Equal("2", f1.ToString());
-        Assert.Equal("3/4", f1.ToString());
+        Assert.Equal("3/4", f2.ToString());
     }
 
     [Fact]
