@@ -37,6 +37,19 @@ public class UnitTestFraction
         Assert.Throws<NotAnIntegerException>(() => f2.GetInteger());
     }
 
+    [Fact]
+    public void TestToString()
+    {
+        // arrange 
+        Fraction f1 = new(2, 1);
+        Fraction f2 = new(3, 4);
+
+        // act & assert
+        Assert.Equal("2", f1.ToString());
+        // Assert.Equal("3/4", f1.ToString());
+    }
+
+
 
     [Fact]
     public void TestAddFraction()
