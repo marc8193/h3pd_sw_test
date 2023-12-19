@@ -46,7 +46,17 @@ public class UnitTestFraction
 
         // act & assert
         Assert.Equal("2", f1.ToString());
-        // Assert.Equal("3/4", f1.ToString());
+        Assert.Equal("3/4", f1.ToString());
+    }
+
+    [Fact]
+    public void TestEqualNull()
+    {
+        // arrange 
+        Fraction f1 = new(2, 1);
+
+        // act & assert
+        Assert.Equal(false, f1.Equals(null));
     }
 
 
