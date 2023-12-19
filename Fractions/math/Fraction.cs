@@ -1,7 +1,4 @@
-﻿using System.Net;
-using System.Security.Cryptography.X509Certificates;
-
-namespace math;
+﻿namespace math;
 
 public class NotAnIntegerException : Exception { }
 public class DenominatorIsZeroException : Exception { }
@@ -26,7 +23,6 @@ public class Fraction
             this.numerator = -this.numerator;
             this.denominator = -this.denominator;
         }
-
     }
 
     public int GetDenominator()
@@ -67,11 +63,8 @@ public class Fraction
 
         Fraction? other = (Fraction)obj;
 
-        //if (other == null)
-        //    return false;
-        //else
         return this.denominator == other.GetDenominator()
-                && this.numerator == other.GetNumerator();
+                    && this.numerator == other.GetNumerator();
     }
 
 
@@ -112,7 +105,6 @@ public class Fraction
 
     public static int GCD(int m, int n)
     {
-        // System.Console.WriteLine(m + " " + n);
         if (m < 0)
             return -GCD(-m, n);
 
@@ -123,9 +115,9 @@ public class Fraction
         else
             return GCD(n, m % n);
     }
-
+    /*
     public override int GetHashCode()
     {
         throw new NotImplementedException();
-    }
+    }*/
 }
