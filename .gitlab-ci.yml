@@ -23,6 +23,8 @@ test:
   script:
     - dotnet tool install -g dotnet-reportgenerator-globaltool
     - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
+    - OUTPUT=$(find Output | grep xml)
+    - echo "${OUTPUT}"
     - /root/.dotnet/tools/reportgenerator -reports coverage.cobertura.xml -reporttypes:Html
 
 
