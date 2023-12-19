@@ -25,7 +25,7 @@ test:
     - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
     - OUTPUT=$(find tests/TestResults | grep xml)
     - echo "${OUTPUT}"
-    - /root/.dotnet/tools/reportgenerator -reports ${OUTPUT} -reporttypes:Html
+    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html
 
 
 
