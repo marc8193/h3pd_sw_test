@@ -60,6 +60,14 @@ public class UnitTestFraction
     }
 
 
+    [Fact]
+    public void TestDenominatorZero()
+    {
+        Assert.Throws<DenominatorIsZeroException>(() => new Fraction(2, 0));
+    }
+
+
+
 
     [Fact]
     public void TestAddFraction()

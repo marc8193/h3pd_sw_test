@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 namespace math;
 
 public class NotAnIntegerException : Exception { }
+public class DenominatorIsZeroException : Exception { }
 
 public class Fraction
 {
@@ -17,11 +18,14 @@ public class Fraction
         this.numerator = a / common;
         this.denominator = b / common;
 
-        if (this.denominator<0)
+        if (this.denominator == 0)
+            throw new DenominatorIsZeroException();
+
+        if (this.denominator < 0)
         {
             this.numerator = -this.numerator;
             this.denominator = -this.denominator;
-        }        
+        }
 
     }
 
@@ -37,7 +41,7 @@ public class Fraction
 
     public override string ToString()
     {
-        if (this.denominator==1)
+        if (this.denominator == 1)
             return this.numerator + "";
         else
             return this.numerator + "/" + this.denominator;
@@ -63,10 +67,10 @@ public class Fraction
 
         Fraction? other = (Fraction)obj;
 
-        if (other == null)
-            return false;
-        else
-            return this.denominator == other.GetDenominator()
+        //if (other == null)
+        //    return false;
+        //else
+        return this.denominator == other.GetDenominator()
                 && this.numerator == other.GetNumerator();
     }
 
@@ -109,7 +113,7 @@ public class Fraction
     public static int GCD(int m, int n)
     {
         // System.Console.WriteLine(m + " " + n);
-        if (m<0) 
+        if (m < 0)
             return -GCD(-m, n);
 
         if (n > m)
