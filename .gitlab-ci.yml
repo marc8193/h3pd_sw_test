@@ -26,6 +26,10 @@ test:
     - OUTPUT=$(find tests/TestResults | grep xml)
     - echo "${OUTPUT}"
     - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
+  artifacts:
+    paths:
+      - html
+
 
 
 
