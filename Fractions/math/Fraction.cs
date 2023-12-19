@@ -115,9 +115,9 @@ public class Fraction
         else
             return GCD(n, m % n);
     }
-    /*
+    
     public override int GetHashCode()
     {
         throw new NotImplementedException();
-    }*/
+    }
 }

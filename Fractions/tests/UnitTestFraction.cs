@@ -164,4 +164,13 @@ public class UnitTestFraction
         Assert.Equal(1, Fraction.GCD(7, 13));
         Assert.Equal(1, Fraction.GCD(13, 7));
     }
+
+    [Fact]
+    public void TestGetHashCode()
+    {
+        Fraction f1 = new(2, 6);
+
+        _ = Assert.Throws<NotImplementedException>(() => f1.GetHashCode());
+    }
+
 }
