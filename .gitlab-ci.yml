@@ -18,23 +18,10 @@ build:
     - dotnet build $SOLUTION --configuration Release
 
 test:
+  image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
   stage: test
   script:
     - dotnet test $SOLUTION --configuration Release
 
 
 
-flake8:
-  image: "python:3.7"
-  stage: Static Analysis
-  allow_failure: false
-  script:
-  - flake8 --max-line-length=120 *.py
-  
-
-unit_test_36:
-  image: "python:3.6"
-  stage: Test
-  script:
-  - chmod +x perform_unittest.sh
-  - ./perform_unittest.sh
