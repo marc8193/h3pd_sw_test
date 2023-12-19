@@ -1,7 +1,6 @@
 stages:
   - build
   - test
-  - run_main
 
 variables:
   SOLUTION: "UnitTest.sln"
@@ -17,7 +16,7 @@ build:
   script:
     - dotnet build $SOLUTION --configuration Release
 
-test:
+unit_test:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
   stage: test
   script:
@@ -32,7 +31,7 @@ test:
 
 run_main:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
-  stage: run_main
+  stage: test
   script:
     - dotnet run $SOLUTION -p console_app --configuration Release
 
