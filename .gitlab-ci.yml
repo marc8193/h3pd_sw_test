@@ -20,9 +20,12 @@ unit_test:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
   stage: test
   script:
-    - dotnet tool install -g dotnet-reportgenerator-globaltool
     - dotnet add package JUnitTestLogger
     - dotnet test $SOLUTION --configuration Release --logger "junit;LogFileName=MyProject.xml"
+  artifacts:
+    reports:
+      junit: ./MyProject.xml
+#    - dotnet tool install -g dotnet-reportgenerator-globaltool
 #    - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
 #    - OUTPUT=$(find tests/TestResults | grep xml)
 #    - echo "${OUTPUT}"
@@ -31,9 +34,6 @@ unit_test:
 #  artifacts:
 #    paths:
 #      - Fractions/html
-    artifacts:
-      reports:
-        junit: ./MyProject.xml
 
 run_main:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
