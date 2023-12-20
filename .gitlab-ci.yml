@@ -20,12 +20,12 @@ unit_test:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
   stage: test
   script:
-    - dotnet add tests/tests.csproj package JUnitTestLogger
-    - dotnet test $SOLUTION --configuration Release --logger "junit;LogFileName=MyProject.xml"
+    - dotnet add tests/tests.csproj package JunitXml.TestLogger
+    - dotnet test $SOLUTION --configuration Release --logger "junit;LogFilePath=dotnet-test-result.xml"
     - ls -laR
   artifacts:
     reports:
-      junit: Fractions/tests/MyProject.xml
+      junit: Fractions/tests/dotnet-test-result.xml
 #    - dotnet tool install -g dotnet-reportgenerator-globaltool
 #    - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
 #    - OUTPUT=$(find tests/TestResults | grep xml)
