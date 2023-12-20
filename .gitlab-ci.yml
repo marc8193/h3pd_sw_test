@@ -22,9 +22,10 @@ unit_test:
   script:
     - dotnet add tests/tests.csproj package JUnitTestLogger
     - dotnet test $SOLUTION --configuration Release --logger "junit;LogFileName=MyProject.xml"
+    - ls -laR
   artifacts:
     reports:
-      junit: ./MyProject.xml
+      junit: Fractions/tests/MyProject.xml
 #    - dotnet tool install -g dotnet-reportgenerator-globaltool
 #    - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
 #    - OUTPUT=$(find tests/TestResults | grep xml)
