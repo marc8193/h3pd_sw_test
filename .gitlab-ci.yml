@@ -21,11 +21,17 @@ unit_test:
   stage: test
   script:
     - dotnet add tests/tests.csproj package JunitXml.TestLogger
-    - dotnet test $SOLUTION --configuration Release --logger "junit;LogFilePath=dotnet-test-result.xml"
-    - ls -laR
+    - dotnet test $SOLUTION --configuration Release --logger "junit;LogFilePath=dotnet-test-result.xml" --collect:"XPlat Code Coverage"
+    - OUTPUT=$(find tests/TestResults | grep xml)
+    - echo "${OUTPUT}"
+    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
+
+#    - ls -laR
   artifacts:
     reports:
       junit: Fractions/tests/dotnet-test-result.xml
+    paths:
+      - Fractions/html
 #    - dotnet tool install -g dotnet-reportgenerator-globaltool
 #    - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
 #    - OUTPUT=$(find tests/TestResults | grep xml)
