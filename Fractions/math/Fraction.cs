@@ -1,4 +1,4 @@
-﻿namespace math;
+﻿namespace techmath;
 
 public class NotAnIntegerException : Exception { }
 public class DenominatorIsZeroException : Exception { }

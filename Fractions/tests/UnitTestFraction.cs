@@ -1,4 +1,4 @@
-using math;
+using techmath;
 
 namespace tests;
 
