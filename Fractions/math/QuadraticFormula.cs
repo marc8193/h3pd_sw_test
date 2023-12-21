@@ -55,41 +55,41 @@ namespace techmath
             C = _c;
         }
 
-        public double getD()
+        public double GetD()
         {
             return B * B - 4 * A * C;
         }
 
-        public double getSqrtD()
+        public double GetSqrtD()
         {
-           if (getD() < 0)
+           if (GetD() < 0)
                 throw new NegativeDException();
 
-            return Math.Sqrt(getD());
+            return Math.Sqrt(GetD());
         }
 
-        public double getS()
+        public double GetS()
         {
             return -B / (2 * A);
         }
 
-        public double getT()
+        public double GetT()
         {
-            return -getD() / (4 * A);
+            return -GetD() / (4 * A);
         }
 
-        public double getX1()
+        public double GetX1()
         {
-            if (getD() < 0)
+            if (GetD() < 0)
                 throw new NegativeDException();
-            return (-B + getSqrtD()) / (2 * A);
+            return (-B + GetSqrtD()) / (2 * A);
         }
 
-        public double getX2()
+        public double GetX2()
         {
-            if (getD() < 0)
+            if (GetD() < 0)
                 throw new NegativeDException();
-            return (-B - getSqrtD()) / (2 * A);
+            return (-B - GetSqrtD()) / (2 * A);
         }
     }
 }

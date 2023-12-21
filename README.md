@@ -36,13 +36,16 @@ The continuous integration process is defined in **.gitlab-ci.yml**
 It contains two stages:
 
 * build
+	- build the solution to check for compile errors
 * test
-
-
-
-
+	- run unit tests
+	- run the sample main program
 
 ![Pipelines](pipelines.png "Gitlab Pipelines in this project").
+
+
+During the execution of the unit test the code coverage is collected. The results are shown in the following format. (as an Artifact)
+
 ![Code Coverage](coverage.png "Code coverage of the unit tests").
 
 

@@ -4,7 +4,7 @@ namespace tests;
 
 public class UnitTestQF
 {
-    QuadraticFormula qf;
+    QuadraticFormula? qf;
 
     [Fact]
     public void TestMethodSimple()
@@ -15,10 +15,10 @@ public class UnitTestQF
 
         qf = new QuadraticFormula(a, b, c);
 
-        Assert.Equal(4, qf.getD());
+        Assert.Equal(4, qf.GetD());
 
-        var x1 = qf.getX1();
-        var x2 = qf.getX2();
+        var x1 = qf.GetX1();
+        var x2 = qf.GetX2();
 
         Assert.Equal(-1, x1);
         Assert.Equal(-2, x2);
@@ -35,26 +35,26 @@ public class UnitTestQF
         qf.B = 6;
         qf.C = 4;
 
-        Assert.Equal(4, qf.getD());
-        Assert.Equal(-1, qf.getX1());
-        Assert.Equal(-2, qf.getX2());
+        Assert.Equal(4, qf.GetD());
+        Assert.Equal(-1, qf.GetX1());
+        Assert.Equal(-2, qf.GetX2());
     }
 
     [Fact]
     public void TestMethodDZero()
     {
         qf = new QuadraticFormula(1, 2, 1);
-        Assert.Equal(0, qf.getD());
-        Assert.Equal(qf.getX1(), qf.getX2());
+        Assert.Equal(0, qf.GetD());
+        Assert.Equal(qf.GetX1(), qf.GetX2());
     }
 
     [Fact]
     public void TestMethodDNeg()
     {
         qf = new QuadraticFormula(1, 1, 1);
-        Assert.Equal(-3, qf.getD());
+        Assert.Equal(-3, qf.GetD());
 
-        Assert.Throws<NegativeDException>(() => qf.getSqrtD());
+        Assert.Throws<NegativeDException>(() => qf.GetSqrtD());
         
     }
 

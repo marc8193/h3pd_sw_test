@@ -38,26 +38,26 @@ Console.WriteLine("B: " + b);
 Console.WriteLine("C: " + c);
 
 
-Console.WriteLine("D: " + qf.getD().ToString());
-if (qf.getD() < 0)
+Console.WriteLine("D: " + qf.GetD().ToString());
+if (qf.GetD() < 0)
 {
-    Console.WriteLine("S: " + qf.getS().ToString());
-    Console.WriteLine("T: " + qf.getT().ToString());
+    Console.WriteLine("S: " + qf.GetS().ToString());
+    Console.WriteLine("T: " + qf.GetT().ToString());
 }
 
-else if (qf.getD() == 0)
+else if (qf.GetD() == 0)
 {
-    Console.WriteLine("X: " + qf.getX1().ToString());
-    Console.WriteLine("S: " + qf.getS().ToString());
-    Console.WriteLine("T: " + qf.getT().ToString());
+    Console.WriteLine("X: " + qf.GetX1().ToString());
+    Console.WriteLine("S: " + qf.GetS().ToString());
+    Console.WriteLine("T: " + qf.GetT().ToString());
 }
-else if (qf.getD() > 0)
+else if (qf.GetD() > 0)
 {
-    Console.WriteLine("Kvardratrod D: " + qf.getSqrtD().ToString());
-    Console.WriteLine("X1: " + qf.getX1().ToString());
-    Console.WriteLine("X2: " + qf.getX2().ToString());
-    Console.WriteLine("S: " + qf.getS().ToString());
-    Console.WriteLine("T: " + qf.getT().ToString());
+    Console.WriteLine("Kvardratrod D: " + qf.GetSqrtD().ToString());
+    Console.WriteLine("X1: " + qf.GetX1().ToString());
+    Console.WriteLine("X2: " + qf.GetX2().ToString());
+    Console.WriteLine("S: " + qf.GetS().ToString());
+    Console.WriteLine("T: " + qf.GetT().ToString());
 }
 
 Console.WriteLine();
