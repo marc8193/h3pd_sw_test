@@ -36,7 +36,7 @@ unit_test:
 
   artifacts:
     reports:
-      junit: Fractions/tests/dotnet-test-result.xml
+#      junit: Fractions/tests/dotnet-test-result.xml
       coverage_report:
         coverage_format: cobertura
         path: Fractions/${OUTPUT}      
