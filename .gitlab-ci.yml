@@ -7,7 +7,10 @@ variables:
   DOTNET_SDK_VERSION: "8.0"
 
 before_script:
+  # output some debug info
   - uname -a
+  - echo $SOLUTION
+  - echo $DOTNET_SDK_VERSION
   - cd Fractions
 
 build:
@@ -23,25 +26,19 @@ unit_test:
     - dotnet tool install -g dotnet-reportgenerator-globaltool
     - dotnet add tests/tests.csproj package JunitXml.TestLogger
     - dotnet test $SOLUTION --configuration Release --logger "junit;LogFilePath=dotnet-test-result.xml" --collect:"XPlat Code Coverage"
+
+    # find and print the output file
     - OUTPUT=$(find tests/TestResults | grep xml)
     - echo "${OUTPUT}"
+    
+    # produce the report
     - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
 
-#    - ls -laR
   artifacts:
     reports:
       junit: Fractions/tests/dotnet-test-result.xml
     paths:
       - Fractions/html
-#    - dotnet tool install -g dotnet-reportgenerator-globaltool
-#    - dotnet test $SOLUTION --configuration Release --collect:"XPlat Code Coverage"
-#    - OUTPUT=$(find tests/TestResults | grep xml)
-#    - echo "${OUTPUT}"
-#    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
-
-#  artifacts:
-#    paths:
-#      - Fractions/html
 
 run_main:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
