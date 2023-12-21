@@ -1,5 +1,3 @@
-using techmath;
-
 namespace tests;
 
 public class UnitTestFraction

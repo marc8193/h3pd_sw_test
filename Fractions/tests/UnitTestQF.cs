@@ -1,21 +1,19 @@
-﻿using techmath;
-
-namespace tests;
+﻿namespace tests;
 
 public class UnitTestQF
 {
-    QuadraticFormula? qf;
-
     [Fact]
     public void TestDefaultConstructor()
     {
-        qf = new QuadraticFormula();
+        QuadraticFormula qf = new ();
+
+        Assert.NotNull(qf);
     }
 
     [Fact]
     public void TestGetST()
     {
-        qf = new QuadraticFormula(2, 0, 4);
+        QuadraticFormula qf = new (2, 0, 4);
 
         Assert.Equal(0, qf.GetS());
         Assert.Equal(4, qf.GetT());
@@ -29,7 +27,7 @@ public class UnitTestQF
         var b = 6;
         var c = 4;
 
-        qf = new QuadraticFormula(a, b, c);
+        QuadraticFormula qf = new (a, b, c);
 
         Assert.Equal(4, qf.GetD());
 
@@ -45,7 +43,7 @@ public class UnitTestQF
     [Fact]
     public void TestMethodSetInstanceIndividually()
     {
-        qf = new QuadraticFormula(-1, -1, -1);
+        QuadraticFormula qf = new(-1, -1, -1);
 
         qf.A = 2;
         qf.B = 6;
@@ -59,7 +57,7 @@ public class UnitTestQF
     [Fact]
     public void TestMethodDZero()
     {
-        qf = new QuadraticFormula(1, 2, 1);
+        QuadraticFormula qf = new(1, 2, 1);
         Assert.Equal(0, qf.GetD());
         Assert.Equal(qf.GetX1(), qf.GetX2());
     }
@@ -67,7 +65,7 @@ public class UnitTestQF
     [Fact]
     public void TestMethodDNeg()
     {
-        qf = new QuadraticFormula(1, 1, 1);
+        QuadraticFormula qf = new(1, 1, 1);
         Assert.Equal(-3, qf.GetD());
 
         Assert.Throws<NegativeDException>(() => qf.GetSqrtD());
@@ -83,7 +81,7 @@ public class UnitTestQF
     [Fact]
     public void TestMethodSetAZero()
     {
-        qf = new QuadraticFormula(2, 1, 1);
+        QuadraticFormula qf = new (2, 1, 1);
         Assert.Throws<ZeroAException>(() => qf.A = 0);
     }
 }
