@@ -7,6 +7,22 @@ public class UnitTestQF
     QuadraticFormula? qf;
 
     [Fact]
+    public void TestDefaultConstructor()
+    {
+        qf = new QuadraticFormula();
+    }
+
+    [Fact]
+    public void TestGetST()
+    {
+        qf = new QuadraticFormula(2, 0, 4);
+
+        Assert.Equal(0, qf.GetS());
+        Assert.Equal(4, qf.GetT());
+    }
+
+
+    [Fact]
     public void TestMethodSimple()
     {
         var a = 2;
