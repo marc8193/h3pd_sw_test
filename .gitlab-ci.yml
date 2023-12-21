@@ -34,12 +34,15 @@ unit_test:
     # produce the report
     - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
 
+    - OUTPUT="Fraction/${OUTPUT}"
+    - echo "${OUTPUT}"
+
   artifacts:
     reports:
 #      junit: Fractions/tests/dotnet-test-result.xml
       coverage_report:
         coverage_format: cobertura
-        path: Fractions/${OUTPUT}      
+        path: ${OUTPUT}      
 #  paths:
 #      - Fractions/html
   
