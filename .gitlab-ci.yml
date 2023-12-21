@@ -39,7 +39,7 @@ unit_test:
       junit: Fractions/tests/dotnet-test-result.xml
       coverage_report:
         coverage_format: cobertura
-        path: coverage/cobertura-coverage.xml      
+        path: ${OUTPUT}      
 #  paths:
 #      - Fractions/html
   
