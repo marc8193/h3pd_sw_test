@@ -34,7 +34,7 @@ unit_test:
     # produce the report
     - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
 
-    - OUTPUT="Fraction/${OUTPUT}"
+    - OUTPUT="Fractions/${OUTPUT}"
     - echo "${OUTPUT}"
 
   artifacts:
