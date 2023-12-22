@@ -13,7 +13,7 @@ public class DemoUnitTest
     [Fact]
     public void TestAssertFalse()
     {
-        Assert.True(1 == 0);
+        Assert.False(1 == 0);
     }
 
     [Fact]
@@ -25,6 +25,26 @@ public class DemoUnitTest
         String full = name + " " + lastname;
         Assert.Equal("Per Madsen", full);
     }
+
+    [Fact]
+    public void TestAssertNotNull()
+    {
+        String name = "Per";
+
+        Assert.NotNull(name);
+    }
+
+    [Fact]
+    public void TestAssertNull()
+    {
+        String? name = "Per";
+        Assert.Equal("Per", name);
+
+        name = null;
+
+        Assert.Null(name);
+    }
+
 }
 
 
