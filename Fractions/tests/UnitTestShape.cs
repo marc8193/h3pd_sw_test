@@ -50,6 +50,19 @@ public class UnitTestShape
         Assert.Equal(2 * 3 + 2 * 4, r1.Perimeter());
     }
 
+    [Fact]
+    public void TestRectangleToString()
+    {
+        Rectangle r1 = new(3, 4);
 
+        Assert.Equal("techmath.Rectangle(3,4)", r1.ToString());
+    }
 
+    [Fact]
+    public void TestCircleToString()
+    {
+        Circle c1 = new(4);
+
+        Assert.Equal("techmath.Circle(4)", c1.ToString());
+    }
 }

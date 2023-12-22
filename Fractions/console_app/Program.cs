@@ -21,10 +21,23 @@ Console.WriteLine();
 // Shape part          */
 /***********************/
 
+Rectangle r1 = new (10, 5);
+
+Console.WriteLine("r1:             " + r1.ToString());
+Console.WriteLine("r1.Perimeter(): " + r1.Perimeter());
+Console.WriteLine("r1.Area():      " + r1.Area());
+
+Circle c1 = new(5);
+
+Console.WriteLine("c1:             " + c1.ToString());
+Console.WriteLine("c1.Perimeter(): " + c1.Perimeter());
+Console.WriteLine("c1.Area():      " + c1.Area());
+
+Console.WriteLine();
+
 /***********************/
 // QuadraticFormula    */
 /***********************/
-
 
 QuadraticFormula qf;
 
@@ -37,27 +50,26 @@ Console.WriteLine("A: " + a);
 Console.WriteLine("B: " + b);
 Console.WriteLine("C: " + c);
 
-
 Console.WriteLine("D: " + qf.GetD().ToString());
+
+Console.WriteLine("S: " + qf.GetS().ToString());
+Console.WriteLine("T: " + qf.GetT().ToString());
+
+
 if (qf.GetD() < 0)
 {
-    Console.WriteLine("S: " + qf.GetS().ToString());
-    Console.WriteLine("T: " + qf.GetT().ToString());
+    Console.WriteLine("No solutuions");
 }
 
 else if (qf.GetD() == 0)
 {
     Console.WriteLine("X: " + qf.GetX1().ToString());
-    Console.WriteLine("S: " + qf.GetS().ToString());
-    Console.WriteLine("T: " + qf.GetT().ToString());
 }
 else if (qf.GetD() > 0)
 {
     Console.WriteLine("Kvardratrod D: " + qf.GetSqrtD().ToString());
     Console.WriteLine("X1: " + qf.GetX1().ToString());
     Console.WriteLine("X2: " + qf.GetX2().ToString());
-    Console.WriteLine("S: " + qf.GetS().ToString());
-    Console.WriteLine("T: " + qf.GetT().ToString());
 }
 
 Console.WriteLine();

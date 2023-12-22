@@ -5,7 +5,7 @@
         private readonly double length;
         private readonly double width;
 
-        public Rectangle(double length, double width )
+        public Rectangle(double length, double width)
         {
             this.length = length;
             this.width = width;
@@ -23,7 +23,7 @@
 
         public override string? ToString()
         {
-            return base.ToString();
+            return base.ToString() + "(" + this.length + "," + this.width + ")";
         }
     }
 }
