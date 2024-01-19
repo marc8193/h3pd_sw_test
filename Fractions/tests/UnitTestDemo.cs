@@ -4,10 +4,18 @@ namespace tests;
 // Simple Unit test, just to Demo simple Assert construction
 public class DemoUnitTest
 {
+    readonly Stack<int> stack;
+
+    public DemoUnitTest()
+    {
+        stack = new Stack<int>();
+    }
+
+
     [Fact]
     public void TestAssertTrue()
     {
-        Assert.True(1==1);
+        Assert.True(1 == 1);
     }
 
     [Fact]
@@ -45,6 +53,11 @@ public class DemoUnitTest
         Assert.Null(name);
     }
 
+    [Fact]
+    public void TestAddToStack()
+    {
+        stack.Push(1);
+        Assert.Single(stack);
+    }
+
 }
-
-
