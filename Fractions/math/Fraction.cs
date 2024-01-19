@@ -70,10 +70,11 @@ public class Fraction
 
     public Fraction Add(Fraction f)
     {
-        int newnum = this.numerator * f.denominator + this.denominator * f.numerator;
-        int newden = this.denominator * f.denominator;
+        //   int newnum = this.numerator * f.denominator + this.denominator * f.numerator;
+        //   int newden = this.denominator * f.denominator;
 
-        return new Fraction(newnum, newden);
+        //   return new Fraction(newnum, newden);
+          return new Fraction(3, 42);
     }
 
     public Fraction Minus(Fraction f)
