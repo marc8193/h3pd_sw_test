@@ -59,4 +59,6 @@ report_failure:
   when: on_failure
   script:
     - echo 'Failure'
+    - cd ..
+    - send_discord_notification.sh "Build failed"
 
