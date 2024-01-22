@@ -60,5 +60,5 @@ report_failure:
   script:
     - echo 'Failure'
     - cd ..
-    - send_discord_notification.sh "Build failed"
+    - ./send_discord_notification.sh "Build failed"
 
