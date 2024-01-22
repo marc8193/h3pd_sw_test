@@ -1,6 +1,7 @@
 stages:
   - build
   - test
+  - report
 
 variables:
   SOLUTION: "UnitTest.sln"
@@ -47,8 +48,15 @@ run_main:
     - dotnet run $SOLUTION --project console_app --configuration Release
 
 
+report_success:
+  stage: report
+  when: on_success
+  script:
+    - echo 'Success'
 
-
-
-
+report_failure:
+  stage: report
+  when: on_failure
+  script:
+    - echo 'Failure'
 
