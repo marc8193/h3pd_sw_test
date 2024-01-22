@@ -12,6 +12,7 @@ before_script:
   - uname -a
   - echo $SOLUTION
   - echo $DOTNET_SDK_VERSION
+  - chmod +x send_discord_notification.sh
   - cd Fractions
 
 build:
