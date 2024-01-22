@@ -57,7 +57,7 @@ report_success:
 
 report_failure:
   stage: report
-  when: on_success
+  when: on_failure
   script:
     - echo 'Failure'
     - cd ..
