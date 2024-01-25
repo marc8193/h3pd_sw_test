@@ -12,7 +12,7 @@ public class Fraction
     {
         var common = GCD(a, b);
 
-        this.numerator = a / common /2;
+        this.numerator = a / common;
         this.denominator = b / common;
 
         if (this.denominator == 0)
