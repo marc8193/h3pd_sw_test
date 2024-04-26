@@ -1,12 +1,11 @@
 # H3PD_SW_Test
 
-Repository with a small code sample used in the course Software Test on H3PD (TECHCOLLEGE Aalborg)
-
+A repository with a small code sample used in the courses like Object Oriented Programming & Software Test at TECHCOLLEGE Aalborg
 
 
 # Purpose
 
-To show a practical usage of Unit Testing and Continuous Integration using Gitlab
+To show a practical usage of Unit Testing and Continuous Integration using Gitlab and C#
 
 
 The source code contains three projects:
