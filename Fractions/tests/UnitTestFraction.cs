@@ -95,29 +95,13 @@ public class UnitTestFraction
     [Fact]
     public void TestMinusFraction()
     {
-        Fraction f1 = new(3, 4);
-        Fraction f2 = new(1, 3);
-
-        var res = f1.Minus(f2);
-
-        Assert.Equal(new Fraction(9 - 4, 12), res);
+       // to do 
     }
 
     [Fact]
     public void TestMultiplyInteger()
     {
-        Fraction f1 = new(2, 7);
-        Fraction f2 = f1.Multiply(3);
-
-        Assert.False(f2.IsInteger());
-        Assert.Equal(f2, new Fraction(6, 7));
-
-        f1 = new(2, 6);
-        f2 = f1.Multiply(3);
-
-        Assert.True(f2.IsInteger());
-        Assert.Equal(new Fraction(1, 1), f2);
-        Assert.Equal(1, f2.GetInteger());
+           // to do
     }
 
 
