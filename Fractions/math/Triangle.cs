@@ -15,5 +15,10 @@
         {
             return a + b + c;
         }
+        public override string? ToString()
+        {
+            return base.ToString() + $"({this.a}, {this.b}, {this.c})";
+        }
+
     }
 }
