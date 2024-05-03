@@ -66,5 +66,36 @@ public class UnitTestShape
         Assert.Equal("techmath.Rectangle(3,4)", r1.ToString());
     }
 
+    [Fact]
+    public void TestRightTriangleConstructor()
+    {
+        RightTriangle rt1 = new(3, 4, 5);
+        Assert.NotNull(rt1);
+    }
+
+    [Fact]
+    public void TestTriangleArea()
+    {
+        RightTriangle rt1 = new(3, 4, 5);
+
+        Assert.Equal(6, rt1.Area());
+    }
+
+    [Fact]
+    public void TestTrianglePerimeter()
+    {
+        RightTriangle rt1 = new(3, 4, 5);
+
+        Assert.Equal(12, rt1.Perimeter());
+    }
+
+    [Fact]
+    public void TestTriangleToString()
+    {
+        RightTriangle rt1 = new(3, 4, 5);
+
+        Assert.Equal("techmath.RightTriangle(3, 4, 5)", rt1.ToString());
+    }
+
 
 }
