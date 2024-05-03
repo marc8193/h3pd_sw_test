@@ -35,6 +35,12 @@ Console.WriteLine("c1:             " + c1);
 Console.WriteLine("c1.Perimeter(): " + c1.Perimeter());
 Console.WriteLine("c1.Area():      " + c1.Area());
 
+RightTriangle rt1 = new(3, 4, 5);
+
+Console.WriteLine("rt1:             " + rt1);
+Console.WriteLine("rt1.Perimeter(): " + rt1.Perimeter());
+Console.WriteLine("rt1.Area():      " + rt1.Area());
+
 Console.WriteLine();
 
 /***********************/
