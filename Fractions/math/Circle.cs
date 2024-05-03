@@ -1,6 +1,6 @@
 ﻿namespace techmath
 {
-    public class Circle: Shape
+    public class Circle : Shape
     {
         private double radius;
 
@@ -16,7 +16,7 @@
 
         public override double Perimeter()
         {
-            return 2 * this.radius * Math.PI; 
+            return 2 * this.radius * Math.PI;
         }
 
         public override string? ToString()

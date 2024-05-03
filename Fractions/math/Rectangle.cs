@@ -1,6 +1,6 @@
 ﻿namespace techmath
 {
-    public class Rectangle: Shape
+    public class Rectangle : Shape
     {
         private readonly double length;
         private readonly double width;

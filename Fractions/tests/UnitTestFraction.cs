@@ -95,13 +95,13 @@ public class UnitTestFraction
     [Fact]
     public void TestMinusFraction()
     {
-       // to do 
+        // to do 
     }
 
     [Fact]
     public void TestMultiplyInteger()
     {
-           // to do
+        // to do
     }
 
 

@@ -62,7 +62,7 @@ namespace techmath
 
         public double GetSqrtD()
         {
-           if (GetD() < 0)
+            if (GetD() < 0)
                 throw new NegativeDException();
 
             return Math.Sqrt(GetD());

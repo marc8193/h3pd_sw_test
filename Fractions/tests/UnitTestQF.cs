@@ -5,7 +5,7 @@ public class UnitTestQF
     [Fact]
     public void TestDefaultConstructor()
     {
-        QuadraticFormula qf = new ();
+        QuadraticFormula qf = new();
 
         Assert.NotNull(qf);
     }
@@ -13,7 +13,7 @@ public class UnitTestQF
     [Fact]
     public void TestGetST()
     {
-        QuadraticFormula qf = new (2, 0, 4);
+        QuadraticFormula qf = new(2, 0, 4);
 
         Assert.Equal(0, qf.GetS());
         Assert.Equal(4, qf.GetT());
@@ -27,7 +27,7 @@ public class UnitTestQF
         var b = 6;
         var c = 4;
 
-        QuadraticFormula qf = new (a, b, c);
+        QuadraticFormula qf = new(a, b, c);
 
         Assert.Equal(4, qf.GetD());
 
@@ -69,7 +69,7 @@ public class UnitTestQF
         Assert.Equal(-3, qf.GetD());
 
         Assert.Throws<NegativeDException>(() => qf.GetSqrtD());
-        
+
     }
 
     [Fact]
@@ -81,7 +81,7 @@ public class UnitTestQF
     [Fact]
     public void TestMethodSetAZero()
     {
-        QuadraticFormula qf = new (2, 1, 1);
+        QuadraticFormula qf = new(2, 1, 1);
         Assert.Throws<ZeroAException>(() => qf.A = 0);
     }
 }

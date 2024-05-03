@@ -23,7 +23,7 @@ Console.WriteLine();
 /* Shape part          */
 /***********************/
 
-Rectangle r1 = new (10, 5);
+Rectangle r1 = new(10, 5);
 
 Console.WriteLine("r1:             " + r1);
 Console.WriteLine("r1.Perimeter(): " + r1.Perimeter());
