@@ -1,7 +1,8 @@
 ﻿using techmath;
 
+
 /***********************/
-// Fraction part       */
+/* Fraction part       */
 /***********************/
 
 Fraction f1 = new(-3, 4);
@@ -17,27 +18,29 @@ Console.WriteLine("f1.Add(f2):      " + f1.Add(f2));
 
 Console.WriteLine();
 
+
 /***********************/
-// Shape part          */
+/* Shape part          */
 /***********************/
 
 Rectangle r1 = new (10, 5);
 
-Console.WriteLine("r1:             " + r1.ToString());
+Console.WriteLine("r1:             " + r1);
 Console.WriteLine("r1.Perimeter(): " + r1.Perimeter());
 Console.WriteLine("r1.Area():      " + r1.Area());
 
 Circle c1 = new(5);
 
-Console.WriteLine("c1:             " + c1.ToString());
+Console.WriteLine("c1:             " + c1);
 Console.WriteLine("c1.Perimeter(): " + c1.Perimeter());
 Console.WriteLine("c1.Area():      " + c1.Area());
 
 Console.WriteLine();
 
 /***********************/
-// QuadraticFormula    */
+/* QuadraticFormula    */
 /***********************/
+
 
 QuadraticFormula qf;
 
