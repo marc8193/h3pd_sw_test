@@ -15,7 +15,8 @@ public class UnitTestShape
     public void TestCirclePerimeter()
     {
         Circle c1 = new(3);
-        Assert.Equal(18.85, Math.Round(c1.Perimeter(),2, MidpointRounding.AwayFromZero));
+        // assert reuslt with 2 decimals
+        Assert.Equal(18.85, c1.Perimeter(), 2);
     }
 
     [Fact]
