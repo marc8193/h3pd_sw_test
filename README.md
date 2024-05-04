@@ -58,8 +58,8 @@ dotnet test --collect:"XPlat Code Coverage"
 ```
 reportgenerator -reports:"tests\TestResults\{guid}\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
 ```
+(or use -reporttypes:TextSummary)
 
--reporttypes:TextSummary
 
 # Continuous Integration
 
