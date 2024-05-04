@@ -34,8 +34,8 @@ unit_test:
     - echo "${OUTPUT}"
     
     # produce the report
-    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
-
+    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html,TextSummary -targetdir:html
+  
   artifacts:
     reports:
       junit: Fractions/tests/dotnet-test-result.xml
