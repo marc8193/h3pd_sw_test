@@ -34,7 +34,8 @@ unit_test:
     - echo "${OUTPUT}"
     
     # produce the report
-    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html,TextSummary -targetdir:html
+    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
+    - /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:TextSummary -targetdir:text
   
   artifacts:
     reports:
