@@ -28,6 +28,39 @@ A XUnit test based project for unit testing of the **techmath** classes
 
 A sample console based application demonstrating the simple usages of the **techmath** classes
 
+
+# How to
+
+## Clean up and Build
+
+```
+dotnet clean
+dotnet build
+```
+
+## Run the console app
+
+```
+dotnet run --project console_app
+```
+
+## Run unit tests (and collect coverage data)
+
+```
+dotnet test
+
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+## Make coverage report
+
+
+```
+reportgenerator -reports:"tests\TestResults\{guid}\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
+```
+(or use -reporttypes:TextSummary)
+
+
 # Continuous Integration
 
 The continuous integration process is defined in **.gitlab-ci.yml**
