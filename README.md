@@ -36,16 +36,6 @@ A sample console based application demonstrating the simple usages of the **tech
 ```
 dotnet clean
 dotnet build
-
-```
-
-## Run unit tests
-
-```
-dotnet test
-
-dotnet test --collect:"XPlat Code Coverage"
-
 ```
 
 ## Run the console app
@@ -54,6 +44,22 @@ dotnet test --collect:"XPlat Code Coverage"
 dotnet run --project console_app
 ```
 
+## Run unit tests (and collect coverage data)
+
+```
+dotnet test
+
+dotnet test --collect:"XPlat Code Coverage"
+```
+
+## Make coverage report
+
+
+```
+reportgenerator -reports:"tests\TestResults\{guid}\coverage.cobertura.xml" -targetdir:"coveragereport" -reporttypes:Html
+```
+
+-reporttypes:TextSummary
 
 # Continuous Integration
 
