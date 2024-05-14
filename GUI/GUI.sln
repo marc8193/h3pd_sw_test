@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "GUI.csproj", "{A5ABDF45-3FC1-4550-9E69-B572A9B1F5D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_proj", "..\EF\EF_proj.csproj", "{CC1FD0BA-985F-47C6-BA8B-FC674A434303}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5ABDF45-3FC1-4550-9E69-B572A9B1F5D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5ABDF45-3FC1-4550-9E69-B572A9B1F5D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5ABDF45-3FC1-4550-9E69-B572A9B1F5D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5ABDF45-3FC1-4550-9E69-B572A9B1F5D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC1FD0BA-985F-47C6-BA8B-FC674A434303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC1FD0BA-985F-47C6-BA8B-FC674A434303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC1FD0BA-985F-47C6-BA8B-FC674A434303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC1FD0BA-985F-47C6-BA8B-FC674A434303}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17F75356-3035-4C3C-939F-ADFDE87AC369}
+	EndGlobalSection
+EndGlobal
