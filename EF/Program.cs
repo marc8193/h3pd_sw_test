@@ -11,7 +11,7 @@ public class EFDemo
     public static void dump(Object obj)
     {
         System.Console.WriteLine(JsonSerializer.Serialize(obj,
-        new JsonSerializerOptions { WriteIndented = true,  }));
+        new JsonSerializerOptions { WriteIndented = true, }));
     }
     public static void DeleteAll()
     {
@@ -114,17 +114,14 @@ public class EFDemo
     {
         using (var context = new AppDBContext())
         {
-            Stock stock = context.Stocks.Where(s => s.Description == "Fakta").First();
-
+            Stock stock = context.Stocks.First();
 
             var inv = new Inventory()
             {
                 Item = context.Items.First(),
-                // Location = context.Locations.Include(l => l.StockId).First(),
                 Location = context.Locations.Where(l => l.Stock == stock).First(),
                 Qty = 4
             };
-            // dump(inv);
             context.Inventories.Add(inv);
             context.SaveChanges();
         }
@@ -138,27 +135,49 @@ public class EFDemo
 
             foreach (OrderLine ol in sto.OrderLines)
             {
-                System.Console.WriteLine("Orderline");
-                dump(ol.Item);
-                System.Console.WriteLine(ol.Item);
-
                 var inv = new Inventory()
                 {
-                    //Item = context.Items.Where(i => i.Name == ol.Item.Name).First(),
-                    Item = ol.Item,
+                    Item = context.Items.Where(i => i.Name == ol.Item.Name).First(),
+
+                    // setting Item directly gives an exception, why???
+                    // Item = ol.Item,
                     Qty = ol.Qty,
                     Location = context.Locations.Where(l => l.Stock == stock).First(),
                 };
-                System.Console.WriteLine("Fixed");
 
                 dump(inv.Item);
-                System.Console.WriteLine(inv.Item);
                 context.Inventories.Add(inv);
                 context.SaveChanges();
             }
         }
     }
 
+    public static void ExecuteOrder(Order sales, string stock_name)
+    {
+        using (var context = new AppDBContext())
+        {
+            Stock stock = context.Stocks.Where(s => s.Description == stock_name).First();
+
+            foreach (OrderLine ol in sales.OrderLines)
+            {
+                System.Console.WriteLine("Orderline");
+
+                var inv = context.Inventories.Where(i => i.Item  == ol.Item ).Where(i => i.Qty > ol.Qty ).First();
+
+                inv.Qty -= ol.Qty;
+            }
+            // sales.State = OrderState.Done;
+            System.Console.WriteLine($"saved: {context.SaveChanges()}");
+            
+        }
+
+
+        // check items in stock/inventory
+
+        // remove from inventory
+        // mark order done
+
+    }
 
 
     public static void Main(string[] args)
@@ -175,6 +194,9 @@ public class EFDemo
         CreateLocations("Fakta", 10, 20);
         CreateLocations("Netto", 12, 12);
 
+        // create inventory 
+        CreateInventory();
+
         var sto_order1 = new Dictionary<string, int>(){
             {"Pepsi", 100},
             {"Coca cola", 110},
@@ -188,24 +210,26 @@ public class EFDemo
             {"Tuborg Classic", 1}};
 
         var sto1 = CreateOrder("Levering torsdag", "Fakta", sto_order1);
-        var sto2 = CreateOrder("Levering torsdag", "Netto", sto_order2);
+        // var sto2 = CreateOrder("Levering torsdag", "Netto", sto_order2);
 
         StoreOrder(sto1, "Fakta");
-        StoreOrder(sto2, "Netto");
+        // StoreOrder(sto2, "Netto");
 
         // depends on Items and Customers
-        var order1 = new Dictionary<string, int>(){
+        var items_1 = new Dictionary<string, int>(){
             {"Pepsi", 3},
             {"Coca cola", 3},
             {"Tuborg Classic", 5} };
 
-        CreateOrder("Anders lørdag", "Anders And", order1);
-        var order2 = new Dictionary<string, int>(){
+        var salesorder_1 = CreateOrder("Anders lørdag", "Anders And", items_1);
+        var items_2 = new Dictionary<string, int>(){
             {"Pepsi", 13},
             {"Coca cola", 3},
             {"Tuborg Light", 5} };
 
-        CreateOrder("Egon fredag", "Egon Olsen", order2);
+        var salesorder_2 = CreateOrder("Egon fredag", "Egon Olsen", items_2);
 
+        ExecuteOrder(salesorder_1, "Fakta");
+        //ExecuteOrder(salesorder_2, "Netto");
     }
 }
