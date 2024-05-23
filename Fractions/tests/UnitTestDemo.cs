@@ -1,4 +1,7 @@
 namespace tests;
+using System;
+using System.IO;
+using techmath;
 
 
 // Simple Unit test, just to Demo simple Assert construction
@@ -73,5 +76,54 @@ public class DemoUnitTest
         Assert.Equal(expected, result);
     }
 
+    [Fact]
+    public void TestPrintHello()
+    {
+        // arrange
+        var writer = new StringWriter();
+        Console.SetOut(writer);
 
+        // act
+        IO.PrintHello();
+
+        // assert
+        var output = writer.ToString();
+        Assert.Equal("Hello" + Environment.NewLine, output);
+    }
+    [Fact]
+    public void TestEchoInput()
+    {
+        // arrange
+        var reader = new StringReader("Hello");
+        var writer = new StringWriter();
+        Console.SetIn(reader);
+        Console.SetOut(writer);
+
+        // act
+        IO.EchoInput();
+
+        // assert
+        var output = writer.ToString();
+        Assert.Equal("Hello" + Environment.NewLine, output);
+    }
+
+    [Fact]
+    public void TestWaitForEscape()
+    {
+        // arrange
+        var reader = new StringReader("" + ConsoleKey.Escape);
+        var writer = new StringWriter();
+        Console.SetIn(reader);
+        Console.SetOut(writer);
+        ConsoleKeyInfo ki =  new ConsoleKeyInfo((char)ConsoleKey.Escape, ConsoleKey.Escape, false, false, false);
+
+        IO.MyConsole.SetTestMode([ki]);
+
+        // act
+        IO.WaitForEscape();
+
+        // assert
+        var output = writer.ToString();
+        Assert.Equal("Escape pressed 1!" + Environment.NewLine, output);
+    }
 }

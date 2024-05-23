@@ -83,6 +83,7 @@ else if (qf.GetD() > 0)
 
 Console.WriteLine();
 
+IO.WaitForEscape();
 
 #if DEBUG
 Console.ReadLine();
