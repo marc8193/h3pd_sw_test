@@ -20,7 +20,7 @@ build:
   stage: build
   script:
     - dotnet format $SOLUTION --verify-no-changes
-   # - dotnet build $SOLUTION --configuration Release
+    - dotnet build $SOLUTION --configuration Release
 
 unit_test:
   image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
