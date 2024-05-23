@@ -5,7 +5,7 @@ stages:
 
 variables:
   SOLUTION: "UnitTest.sln"
-  DOTNET_SDK_VERSION: "9.0"
+  DOTNET_SDK_VERSION: "8.0"
 
 before_script:
   # output some debug info
