@@ -56,7 +56,7 @@ public class IO
         {
             // key = System.Console.ReadKey(true).Key;
             key = MyConsole.ReadKey(true).Key;
-            
+
             // System.Console.WriteLine(key);
             count++;
         } while (key != ConsoleKey.Escape);

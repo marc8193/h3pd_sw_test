@@ -8,7 +8,7 @@ public class SomeComplicateClass(string init)
 
     public string GetWeirdString(int SomeNumber)
     {
-        return "WeirdString; " + this.str ;
+        return "WeirdString; " + this.str;
     }
 
 }
@@ -28,6 +28,6 @@ public class DemoUnitMoqTest
         SomeComplicateClass obj = mock.Object;
 
         obj.GetWeirdString(42);
-        
+
     }
 }

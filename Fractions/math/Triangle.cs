@@ -2,7 +2,7 @@
 {
 
     // maybe we should add other triangles later
-    public abstract class Triangle: Shape;
+    public abstract class Triangle : Shape;
 
     public class RightTriangle(double a, double b, double c) : Triangle
     {

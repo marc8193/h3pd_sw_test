@@ -115,7 +115,7 @@ public class DemoUnitTest
         var writer = new StringWriter();
         Console.SetIn(reader);
         Console.SetOut(writer);
-        ConsoleKeyInfo ki =  new ConsoleKeyInfo((char)ConsoleKey.Escape, ConsoleKey.Escape, false, false, false);
+        ConsoleKeyInfo ki = new ConsoleKeyInfo((char)ConsoleKey.Escape, ConsoleKey.Escape, false, false, false);
 
         IO.MyConsole.SetTestMode([ki]);
 
