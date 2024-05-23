@@ -9,5 +9,10 @@ namespace EFCoreExample
         public required Stock Stock { get; init; }
         public int? Aisle { get; init; }
         public int? Zone { get; init; }
+        public virtual string LocCode
+        {
+            get { return $"{Stock}-{Aisle}-{Zone}"; }
+        }
+
     }
 }

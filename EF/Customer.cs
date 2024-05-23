@@ -12,5 +12,10 @@ namespace EFCoreExample
         public string? ZipCode { get; init; }
         public string? Country { get; init; }
 
+        public override String ToString()
+        {
+            return $"{Id}:{Name}";
+        }
+
     }
 }

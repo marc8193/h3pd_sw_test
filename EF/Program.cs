@@ -85,6 +85,8 @@ public class EFDemo
             context.Customers.AddRange([c1, c2, c3, c4, c5]);
             context.SaveChanges();
         }
+        System.Console.WriteLine(c1);
+        System.Console.WriteLine(c2);
     }
 
     public static Order CreateOrder(string order_name, string customer_name, Dictionary<string, int> order)

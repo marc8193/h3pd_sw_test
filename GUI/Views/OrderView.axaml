@@ -2,30 +2,47 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
+             d:DesignWidth="800"
+             d:DesignHeight="450"
              x:Class="GUI.Views.OrderView"
              xmlns:vm="using:GUI.ViewModels"
-            x:DataType="vm:OrderViewModel">
-  <DockPanel>
- 
-    <Button DockPanel.Dock="Bottom"
-            HorizontalAlignment="Stretch"
-            HorizontalContentAlignment="Center">
-        Add Item
-    </Button>
-    <ItemsControl ItemsSource="{Binding OrderList}">
-      <ItemsControl.ItemTemplate>
-        <DataTemplate>
-			<StackPanel>
-				
-			<Button >Click</Button> 
-			<CheckBox Margin="4"
-                    Content="{Binding Description}"/>
-			</StackPanel>
-		</DataTemplate>
-      </ItemsControl.ItemTemplate>
-    </ItemsControl>
-
-  </DockPanel>
-
+             x:DataType="vm:OrderViewModel">
+    <!-- <UserControl.Resources>
+        <DataTemplate x:Key="CustomerTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Name}" />
+                <TextBlock Text="{Binding Id}" />
+            </StackPanel>
+        </DataTemplate>
+    </UserControl.Resources> -->
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center">            
+            Add Item
+        </Button>
+        <DataGrid Margin="20"
+                  ItemsSource="{Binding OrderList}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="False"
+                  GridLinesVisibility="All"
+                  BorderThickness="1"
+                  BorderBrush="Gray">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID"
+                                    Width="2*"
+                                    Binding="{Binding Id}" />
+                <DataGridTextColumn Header="Description"
+                                    Width="2*"
+                                    Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Customer"
+                                    Width="2*"
+                                    Binding="{Binding Customer.Name}" />
+                <!-- <DataGridTemplateColumn Header="Customer"
+                                        CellTemplate="{StaticResource CustomerTemplate}"
+                                        Binding="{Binding Customer}" /> -->
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </UserControl>

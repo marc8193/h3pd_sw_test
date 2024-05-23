@@ -38,5 +38,10 @@ namespace EFCoreExample
             base.OnModelCreating(modelBuilder);
             System.Console.WriteLine("OnModelCreating");
         }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
