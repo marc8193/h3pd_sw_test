@@ -25,10 +25,10 @@ public class Fraction
         }
     }
 
-        public int GetDenominator()
-        {
-                 return this.denominator;
-       }
+    public int GetDenominator()
+    {
+        return this.denominator;
+    }
 
     public int GetNumerator()
     {
