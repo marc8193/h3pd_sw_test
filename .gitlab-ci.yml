@@ -52,6 +52,10 @@ run_main:
 
 
 test_sql:
+  variables:
+    ACCEPT_EULA: Y
+    MSSQL_SA_PASSWORD: Plukfisk1234
+    
   services:
     - name: mcr.microsoft.com/mssql/server:2022-latest
       alias: mssql
