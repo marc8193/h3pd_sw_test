@@ -85,5 +85,5 @@ report_failure:
   script:
     - echo 'Failure'
     - cd ..
-    - ./send_discord_notification.sh {DiscordKey} "Build failed"
+    - ./send_discord_notification.sh $DiscordHook "Build failed"
 
