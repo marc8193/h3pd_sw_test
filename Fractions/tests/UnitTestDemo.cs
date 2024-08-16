@@ -117,7 +117,8 @@ public class DemoUnitTest
         Console.SetOut(writer);
         ConsoleKeyInfo ki = new ConsoleKeyInfo((char)ConsoleKey.Escape, ConsoleKey.Escape, false, false, false);
 
-        IO.MyConsole.SetTestMode([ki]);
+        ConsoleKeyInfo[] keys = {ki};
+        IO.MyConsole.SetTestMode(keys);
 
         // act
         IO.WaitForEscape();

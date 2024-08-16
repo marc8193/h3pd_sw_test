@@ -2,9 +2,14 @@ namespace tests;
 
 using Moq;
 
-public class SomeComplicateClass(string init)
+public class SomeComplicateClass
 {
-    private readonly string str = init;
+    public SomeComplicateClass(string init)
+    {
+        str = init;
+    }
+    
+    private readonly string str;
 
     public string GetWeirdString(int SomeNumber)
     {
