@@ -2,16 +2,17 @@
 
 # Generalized Discord Notification Script
 
-discord_url="https://discord.com/api/webhooks/1198863925962346556/NO6Wor_A5Delf0qbfwxN-ufVOpe86Wb1T8rBSeps7h276qls7OUivJ5VY3cHrNvUCDnl"
+discord_url="https://discord.com/api/webhooks/1198863925962346556/$2"
+
+discord_msg=$2
 
 # Define a function to send a message
 send_discord_notification() {
-  local message=$1
   
   # Construct payload
   local payload=$(cat <<EOF
 {
-  "content": "$message"
+  "content": "$discord_msg"
 }
 EOF
 )
