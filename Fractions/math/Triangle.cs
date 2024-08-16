@@ -19,11 +19,11 @@
 
     public class RightTriangle : Triangle
     {
-        public RightTriangle(double a, double b, double c): base(a, b, c)
+        public RightTriangle(double a, double b, double c) : base(a, b, c)
         {
-            
+
         }
-        
+
         public override double Area()
         {
             return a * b / 2;
