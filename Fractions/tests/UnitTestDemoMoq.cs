@@ -8,7 +8,7 @@ public class SomeComplicateClass
     {
         str = init;
     }
-    
+
     private readonly string str;
 
     public string GetWeirdString(int SomeNumber)
