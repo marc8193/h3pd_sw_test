@@ -51,26 +51,27 @@ run_main:
     - dotnet run $SOLUTION --project console_app --configuration Release
 
 
-#test_sql:
-#  variables:
-#    ACCEPT_EULA: Y
-#    MSSQL_SA_PASSWORD: Plukfisk1234
+test_sql:
+  variables:
+    ACCEPT_EULA: Y
+    MSSQL_SA_PASSWORD: Plukfisk1234
     
-#  services:
-#    - name: mcr.microsoft.com/mssql/server:2022-latest
-#      alias: mssql
-#      # entrypoint: ["/usr/local/bin/db-postgres"]
-#      # command: ["start"]
+  services:
+    - name: mcr.microsoft.com/mssql/server:2022-latest
+      alias: mssql
+      # entrypoint: ["/usr/local/bin/db-postgres"]
+      # command: ["start"]
 
-#  image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
-#  stage: test
-#  script:
-#    - dotnet run $SOLUTION --project console_app --configuration Release
+  image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
+  stage: test
+  script:
+    - dotnet run $SOLUTION --project console_app --configuration Release
 
- # image: "mcr.microsoft.com/mssql-tools"
- # stage: test
- # script:
- #   - sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
+
+  #image: "mcr.microsoft.com/mssql-tools"
+  #stage: test
+  #script:
+  # - sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
 
 
 report_success:
