@@ -62,16 +62,16 @@ test_sql:
       # entrypoint: ["/usr/local/bin/db-postgres"]
       # command: ["start"]
 
-  image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
+  # image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
+  # stage: test
+  # script:
+  #  - dotnet run $SOLUTION --project console_app --configuration Release
+
+
+  image: "mcr.microsoft.com/mssql-tools"
   stage: test
   script:
-    - dotnet run $SOLUTION --project console_app --configuration Release
-
-
-  #image: "mcr.microsoft.com/mssql-tools"
-  #stage: test
-  #script:
-  # - sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
+   - sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
 
 
 report_success:
