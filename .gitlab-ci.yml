@@ -59,19 +59,11 @@ test_sql:
   services:
     - name: mcr.microsoft.com/mssql/server:2022-latest
       alias: mssql
-      # entrypoint: ["/usr/local/bin/db-postgres"]
-      # command: ["start"]
-
-  # image: "mcr.microsoft.com/dotnet/sdk:$DOTNET_SDK_VERSION"
-  # stage: test
-  # script:
-  #  - dotnet run $SOLUTION --project console_app --configuration Release
-
 
   image: "mcr.microsoft.com/mssql-tools"
   stage: test
   script:
-   - sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
+   - /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
 
 
 report_success:
@@ -86,5 +78,3 @@ report_failure:
   script:
     - echo 'Failure'
     - cd ..
-  #  - ./send_discord_notification.sh ${DiscordHook} "Build failed"
-
