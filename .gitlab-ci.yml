@@ -2,6 +2,7 @@ stages:
   - build
   - test
   - report
+  - sql
 
 variables:
   SOLUTION: "UnitTest.sln"
@@ -52,6 +53,7 @@ run_main:
 
 
 test_sql:
+  stage: sql
   variables:
     ACCEPT_EULA: Y
     MSSQL_SA_PASSWORD: Plukfisk1234
@@ -63,7 +65,7 @@ test_sql:
   image: "mcr.microsoft.com/mssql-tools"
   stage: test
   script:
-   - /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P Plukfisk > select @@version > go
+   - /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P Plukfisk1234 > select @@version > go
 
 
 report_success:
