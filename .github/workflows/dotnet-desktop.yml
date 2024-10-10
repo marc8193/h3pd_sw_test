@@ -26,4 +26,13 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test Fractions/UnitTest.sln
+      run: | 
+        dotnet test Fractions/UnitTest.sln --logger "junit;LogFilePath=dotnet-test-result.xml" --collect:"XPlat Code Coverage"
+
+        # find and print the output file
+        OUTPUT=$(find tests/TestResults | grep xml)
+        echo "${OUTPUT}"
+
+        # produce the report
+        /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:Html -targetdir:html
+        /root/.dotnet/tools/reportgenerator -reports:${OUTPUT} -reporttypes:TextSummary -targetdir:text
