@@ -29,4 +29,4 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: echo $PWD  #dotnet test $env:Solution_Name 
+      run: echo $PWD && ls -la #dotnet test $env:Solution_Name 
