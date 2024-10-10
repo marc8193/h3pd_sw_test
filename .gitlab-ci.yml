@@ -2,7 +2,6 @@ stages:
   - build
   - test
   - report
-  - sql
 
 variables:
   SOLUTION: "UnitTest.sln"
@@ -51,28 +50,6 @@ run_main:
   script:
     - dotnet run $SOLUTION --project console_app --configuration Release
 
-
-test_sql:
-  stage: sql
-  variables:
-    ACCEPT_EULA: Y
-    MSSQL_SA_PASSWORD: Plukfisk1234
-    
-  services:
-    - name: mcr.microsoft.com/mssql/server:2022-latest
-      alias: mssql
-
-  image: "mcr.microsoft.com/mssql-tools"
-  stage: test
-  script:
-   - /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P Plukfisk1234 > select @@version > go
-
-
-report_success:
-  stage: report
-  when: on_success
-  script:
-    - echo 'Success'
 
 report_failure:
   stage: report
