@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      Solution_Name: Fractions/UnitTest.sln
+      Solution_Name: h3pd_sw_test/Fractions/UnitTest.sln
 
     steps:
     - name: Checkout
@@ -29,6 +29,4 @@ jobs:
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: 
-        - echo $PWD
-        - dotnet test $env:Solution_Name 
+      run: dotnet test $env:Solution_Name 
