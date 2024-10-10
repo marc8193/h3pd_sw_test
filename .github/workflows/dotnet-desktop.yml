@@ -32,7 +32,7 @@ jobs:
         dotnet test Fractions/UnitTest.sln --configuration Release --logger "junit;LogFilePath=dotnet-test-result.xml" --collect:"XPlat Code Coverage"
 
         # find and print the output file
-        XML_REPORT=$(find tests/TestResults | grep xml)
+        XML_REPORT=$(find Fractions/tests/TestResults | grep xml)
         echo "${XML_REPORT}"
 
     - name: Generate report
