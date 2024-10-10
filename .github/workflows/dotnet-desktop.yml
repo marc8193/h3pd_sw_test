@@ -35,6 +35,8 @@ jobs:
         XML_REPORT=$(find Fractions/tests/TestResults | grep xml)
         echo "${XML_REPORT}"
 
+        echo "${GITHUB_ENV}"
+
     - name: Generate report
       uses: danielpalme/ReportGenerator-GitHub-Action@5.3.11
       with:
