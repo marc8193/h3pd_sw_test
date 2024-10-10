@@ -28,7 +28,7 @@ jobs:
     - name: Execute unit tests
       run: |
         dotnet tool install -g dotnet-reportgenerator-globaltool
-        dotnet add tests/tests.csproj package JunitXml.TestLogger
+        dotnet add Fractions/tests/tests.csproj package JunitXml.TestLogger
         dotnet test Fractions/UnitTest.sln --configuration Release --logger "junit;LogFilePath=dotnet-test-result.xml" --collect:"XPlat Code Coverage"
 
     - name: Generate report
