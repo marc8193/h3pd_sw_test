@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      Solution_Name: UnitTest.sln
+      Solution_Name: Fractions/UnitTest.sln
       Test_Project_Path: Fractions/
 
     steps:
