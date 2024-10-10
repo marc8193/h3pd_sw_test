@@ -1,1 +1,0 @@
-podman run -it -v %CD%:/app unittest_assignment

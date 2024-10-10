@@ -1,1 +1,0 @@
-podman build -t unittest_assignment -f Dockerfile.txt .
